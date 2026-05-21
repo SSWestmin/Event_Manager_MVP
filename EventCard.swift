@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+
+
 struct EventCard: View {
     
 // MARK: stubbing with local state vars
@@ -15,21 +17,31 @@ struct EventCard: View {
 @State private var eventEnd: Date = Date().addingTimeInterval(60*60*24*7)
 @State private var eventLocation: String = "London, UK"
 @State private var ticketPrice: Double = 20.00
+    @State private var ticketDetails: String = "Full refund up to one week before event, 50% discount for group bookings"
     
 var body: some View {
-    
     ZStack{
         LinearGradient(
             gradient: Gradient(colors: [
                 Color(.white),
-                Color(.lightGray)
+                Color(.yellow.withAlphaComponent(0.5))
             ]),
             startPoint: .topLeading,
             endPoint: .bottomTrailing
         )
-        
+        //        MARK: title
         VStack(spacing: 20) {
-            //        MARK: event name
+            Text("Event Details")
+                .font(.title)
+        
+            //        MARK: Top nav button
+            Button {
+                
+            } label: {
+                Label("Back to browse events", systemImage: "arrow.left")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+//            MARK: state variables for API call refactor
             HStack {
                 Label {
                     Text(eventName)
@@ -96,6 +108,24 @@ var body: some View {
                 }
             }
             .padding(.horizontal)
+            //        MARK: ticket refund policy
+            HStack {
+                Label {
+                    Text(ticketDetails)
+                        .frame(maxWidth: 350, alignment: .leading)
+                } icon: {
+                    Image(systemName: "arrow.2.circlepath.circle")
+                        .foregroundColor(.blue)
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            //        MARK: Save button
+            Button {
+                
+            } label: {
+                Label("Save to faves", systemImage: "heart.fill")
+            }
         }
     } // End of V Stack
 } // End of Z stack
