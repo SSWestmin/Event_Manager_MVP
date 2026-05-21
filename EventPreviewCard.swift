@@ -29,6 +29,15 @@ struct EventPreviewCard: View {
             )
             
             VStack(spacing: 20) {
+                //        MARK: title
+                Label{
+                Text("Preview Event")
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            } icon: {
+                Image(systemName: "eye")
+                    .foregroundColor(.blue)
+            }
+        
                 //        MARK: event name & location
                 HStack {
                     Label {
@@ -48,7 +57,7 @@ struct EventPreviewCard: View {
                     }
                 }
                 .padding(.horizontal)
-               
+                
                 //        MARK: start and end dates
                 
                 HStack {
@@ -58,7 +67,7 @@ struct EventPreviewCard: View {
                         Image(systemName: "calendar")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                
+                    
                     Label {
                         Text("End: \(eventEnd.formatted(date: .abbreviated, time: .omitted))")
                     } icon: {
@@ -66,10 +75,10 @@ struct EventPreviewCard: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
-            
+                
                 .padding(.horizontal)
-                Button("View Details") {
-                }
+
+          
             }
             
         } // End of V Stack
