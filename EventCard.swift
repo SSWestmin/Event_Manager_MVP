@@ -34,13 +34,6 @@ var body: some View {
             Text("Event Details")
                 .font(.title)
         
-            //        MARK: Top nav button
-            Button {
-                
-            } label: {
-                Label("Back to browse events", systemImage: "arrow.left")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
 //            MARK: state variables for API call refactor
             HStack {
                 Label {
@@ -120,12 +113,7 @@ var body: some View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
-            //        MARK: Save button
-            Button {
-                
-            } label: {
-                Label("Save to faves", systemImage: "heart.fill")
-            }
+            
         }
     } // End of V Stack
 } // End of Z stack
