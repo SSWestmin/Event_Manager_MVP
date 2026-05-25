@@ -1,6 +1,6 @@
 //
 //  EventModel.swift
-//  Event_Manager_MVP
+//  Event_Manager_Demo
 //
 //  Created by Sumi Sastri on 21/05/2026.
 //
@@ -19,18 +19,6 @@ final class EventModel {
     var eventEnd: Date
     var eventLocation: String
     var ticketPrice: Double
-    // API mapping
-    //    var created :Date
-    //    var changed: Date
-    //    var eventStatus
-    //    var user_id: UUID = UUID()
-    //    eventbriteEventID
-    //    var venue_id: UUID = UUID()
-    //    eventbriteURL
-    //    eventbriteUserID
-    //    isPublic
-    //    termsAndConditions
-    //    refundPolicyText
     
     // MARK: initialisation
     init(
@@ -53,4 +41,3 @@ final class EventModel {
         self.ticketPrice = ticketPrice
     }
 }
-
