@@ -10,8 +10,25 @@ import SwiftUI
 // USAGE: Attendee to continue as auth user to browse events
 
 struct AtendeeListView: View {
-        var body: some View {
-            EventsListView()
+    var body: some View {
+            VStack {
+                // MARK: Top Bar
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        // Logout action
+                    } label: {
+                        Label("Logout", systemImage: "person.crop.circle.badge.xmark")
+                            .font(.headline)
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top)
+                
+                // MARK: Events List
+                EventsListView()
+            }
         }
     }
 

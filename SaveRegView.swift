@@ -11,25 +11,43 @@ import SwiftUI
 
 struct SaveRegView: View {
     var body: some View {
-        
-        VStack{
-            //        MARK: Top nav button
-            Button {
-            } label: {
-                Label("Back to browse events", systemImage: "arrow.left")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            //         MARK: reusabe event card
-            EventCard()
-        }
-        //        MARK: Save button
-        Button {
-            
-        } label: {
-            Label("Save to faves", systemImage: "heart.fill")
-        }
-    }
-}
+        VStack {
+                   // MARK: Top Bar
+                   HStack {
+                       
+                       // MARK: Back Button
+                       Button {
+                       } label: {
+                           Label("Back to browse events", systemImage: "arrow.left")
+                       }
+                       
+                       Spacer()
+                       
+                       // MARK: Logout Button
+                       Button {
+                           // Logout action
+                       } label: {
+                           Label("Logout", systemImage: "person.crop.circle.badge.xmark")
+                       }
+                   }
+                   .padding(.horizontal)
+                   .padding(.top)
+                   
+                   // MARK: Reusable Event Card
+                   EventCard()
+                   
+                   Spacer()
+                   
+                   // MARK: Save button
+                   Button {
+                       
+                   } label: {
+                       Label("Save to faves", systemImage: "heart.fill")
+                   }
+                   .padding(.bottom)
+               }
+           }
+       }
 #Preview {
     SaveRegView()
 }

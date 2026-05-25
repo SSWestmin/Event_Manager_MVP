@@ -11,30 +11,53 @@ import SwiftUI
 
 struct AttendeeView: View {
     var body: some View {
-        VStack{
-            //        MARK: title
-            Text("Registered Events")
-                .font(.title)
-                .padding()
-            //        MARK: Top nav button
-            Button {
-            } label: {
-                Label("Back to browse events", systemImage: "arrow.left")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            //        MARK: reusable event card
-            EventCard()
-            // MARK: Bottom cancel registration button
-            HStack {
-                Button {
-                } label: {
-                    Label("Cancel Registration", systemImage: "sign.fill")
-                }
+            VStack {
                 
+                // MARK: Top Bar
+                HStack {
+                    
+                    // MARK: Back Button
+                    Button {
+                    } label: {
+                        Label("Back to browse events", systemImage: "arrow.left")
+                    }
+                    
+                    Spacer()
+                    
+                    // MARK: Logout Button
+                    Button {
+                        // Logout action
+                    } label: {
+                        Label("Logout", systemImage: "person.crop.circle.badge.xmark")
+                    }
+                }
+                .padding(.horizontal)
+                .padding(.top)
+                
+                // MARK: Title
+                Text("Registered Events")
+                    .font(.title)
+                    .padding()
+                
+                // MARK: Reusable Event Card
+                EventCard()
+                
+                // MARK: Bottom Cancel Registration Button or delete a saved event
+                HStack {
+                    Button {
+                    } label: {
+                        Label("Request refund", systemImage: "sign.fill")
+                    }
+                    Spacer()
+                    Button {
+                    } label: {
+                        Label("", systemImage: "trash")
+                    }
+                
+                }
             }
         }
     }
-}
 #Preview {
     AttendeeView()
 }
