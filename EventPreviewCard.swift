@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-// USAGE: User browses events and clicks for more details
-// Page navigates to EventCard with more complete details
+// USAGE: Reusable card to see event preview and shorten list views
+
 
 struct EventPreviewCard: View {
+    
     // MARK: stubbing with local state vars
     @State private var eventName: String = "Chelsea Flower Show"
     @State private var eventStart: Date = Date().addingTimeInterval(60*60*24)
@@ -31,13 +32,13 @@ struct EventPreviewCard: View {
             VStack(spacing: 20) {
                 //        MARK: title
                 Label{
-                Text("Preview Event")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            } icon: {
-                Image(systemName: "eye")
-                    .foregroundColor(.blue)
-            }
-        
+                    Text("Preview Event")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                } icon: {
+                    Image(systemName: "eye")
+                        .foregroundColor(.blue)
+                }
+                
                 //        MARK: event name & location
                 HStack {
                     Label {
@@ -77,13 +78,12 @@ struct EventPreviewCard: View {
                 }
                 
                 .padding(.horizontal)
-
-          
+                
             }
             
         } // End of V Stack
     } // End of Z stack
-    }
+}
 #Preview {
     EventPreviewCard()
 }
