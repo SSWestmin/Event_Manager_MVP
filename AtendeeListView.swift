@@ -17,7 +17,7 @@ struct AtendeeListView: View {
                     Spacer()
                     
                     Button {
-                        // Logout action
+                        // Logout action return to EventListView
                     } label: {
                         Label("Logout", systemImage: "person.crop.circle.badge.xmark")
                             .font(.headline)

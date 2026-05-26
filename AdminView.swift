@@ -11,38 +11,59 @@ import SwiftUI
 
 struct AdminView: View {
     var body: some View {
-        //        MARK: title
-        Text("Manage events")
-            .font(.title)
-            . padding()
-        //       Call API and loop through cards to display more details nav in VStack
-        //        MARK: create button
-        Button {
-        } label: {
-            Label("Create event", systemImage: "pencil")
-        }
-        .frame(maxWidth: 500, alignment: .leading)
-        //        MARK: reusable event preview card
-        VStack{
-            EventPreviewCard()
-            //                MARK: Bottom nav buttons - archive & update event
-            HStack{
+        VStack {
+            // MARK: Top Bar
+            HStack {
+                            
+                // MARK: Logout Button
                 Button {
+                    // Logout action
                 } label: {
-                    Label("Archive event", systemImage: "arrow.left")
+                    Label("Logout", systemImage: "person.crop.circle.badge.xmark")
                 }
-                .frame(maxWidth: 500, alignment: .leading)
-                
-                Button {
-                } label: {
-                    Label("Update event", systemImage: "arrow.right")
-                }
-                .frame(maxWidth: 500, alignment: .trailing)
             }
+            .frame(maxWidth: .infinity, alignment: .trailing)
+            .padding(.horizontal)
+            .padding(.top)
+            
+            // MARK: Create Button
+            Button {
+            } label: {
+                Label("Create event", systemImage: "pencil")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
+            
+            // MARK: Title
+            Text("Manage events")
+                .font(.title)
+            
+            // MARK: Reusable Event Preview Card
+            VStack {
+                EventPreviewCard()
+                
+                // MARK: Bottom Nav Buttons - Archive & Update Event
+                HStack {
+                    
+                    Button {
+                    } label: {
+                        Label("Archive event", systemImage: "arrow.left")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Button {
+                    } label: {
+                        Label("Update event", systemImage: "arrow.right")
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                }
+            }
+            .padding(.horizontal)
+            
+            Spacer()
         }
     }
 }
-
 #Preview {
     AdminView()
 }

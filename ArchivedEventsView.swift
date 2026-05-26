@@ -29,6 +29,9 @@ struct ArchivedEventsView: View {
             // MARK: Bottom delete button
             HStack {
                 Text("Keep or delete?")
+                
+                Spacer()
+                
                 Button {
                 } label: {
                     Label("", systemImage: "trash")

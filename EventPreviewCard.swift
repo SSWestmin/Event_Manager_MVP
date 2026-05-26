@@ -11,14 +11,14 @@ import SwiftUI
 
 
 struct EventPreviewCard: View {
-    
+ 
     // MARK: stubbing with local state vars
     @State private var eventName: String = "Chelsea Flower Show"
     @State private var eventStart: Date = Date().addingTimeInterval(60*60*24)
     @State private var eventEnd: Date = Date().addingTimeInterval(60*60*24*7)
     @State private var eventLocation: String = "London, UK"
+    @State private var ticketPrice: Double = 25.0
     var body: some View {
-        
         ZStack{
             LinearGradient(
                 gradient: Gradient(colors: [
@@ -28,9 +28,8 @@ struct EventPreviewCard: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
-            
             VStack(spacing: 20) {
-                //        MARK: title
+                // MARK: title
                 Label{
                     Text("Preview Event")
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -38,8 +37,7 @@ struct EventPreviewCard: View {
                     Image(systemName: "eye")
                         .foregroundColor(.blue)
                 }
-                
-                //        MARK: event name & location
+                // MARK: event name & location
                 HStack {
                     Label {
                         Text(eventName)
@@ -48,7 +46,6 @@ struct EventPreviewCard: View {
                         Image(systemName: "pencil")
                             .foregroundColor(.blue)
                     }
-                    
                     Label {
                         Text(eventLocation)
                             .frame(maxWidth: .infinity, alignment: .leading)
