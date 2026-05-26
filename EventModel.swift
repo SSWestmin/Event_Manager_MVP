@@ -17,9 +17,11 @@ final class EventModel {
     var eventDescription: String
     var eventStart: Date
     var eventEnd: Date
-    var eventLocation: String
+    var eventLocation: String // e.g. postcode or address
     var ticketPrice: Double
-    
+    var latitude: Double
+    var longitude: Double
+
     // MARK: initialisation
     init(
         event_id: UUID,
@@ -28,7 +30,9 @@ final class EventModel {
         eventStart: Date,
         eventEnd: Date,
         eventLocation: String,
-        ticketPrice: Double
+        ticketPrice: Double,
+        latitude: Double,
+        longitude: Double
     )
     //MARK: Bindings
     {
@@ -39,5 +43,7 @@ final class EventModel {
         self.eventEnd = eventEnd
         self.eventLocation = eventLocation
         self.ticketPrice = ticketPrice
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

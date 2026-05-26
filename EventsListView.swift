@@ -14,12 +14,21 @@ import SwiftUI
 struct EventsListView: View {
     var body: some View {
         //         MARK: title
-        Text("Browse our events")
+        Text("Browse Events")
             .font(.title)
-        //         MARK: tab views
+        //         MARK: Map & Calendar Views
         HStack{
-            Text("Map View")
-            Text("Calendar View")
+            Button {
+            } label: {
+                Label("Map View", systemImage: "arrow.left")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
+            Button {
+            } label: {
+                Label("Calendar View", systemImage: "arrow.right")
+            }
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
         //       Call API and loop through cards to display more details nav in VStack
         //         MARK: reusable event preview card

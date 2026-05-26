@@ -38,6 +38,8 @@ struct AdminView: View {
             Text("Manage events")
                 .font(.title)
             
+            
+            
             // MARK: Reusable Event Preview Card
             VStack {
                 EventPreviewCard()
